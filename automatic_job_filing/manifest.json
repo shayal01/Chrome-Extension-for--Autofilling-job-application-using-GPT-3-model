@@ -1,0 +1,22 @@
+{
+  "manifest_version": 3,
+  "name": "Job Application Filler",
+  "version": "1.0",
+  "description": "A Chrome extension that fills out job applications using an uploaded resume using  GPT-3",
+  
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"],
+      "run_at": "document_idle"
+    }
+  ],
+  "permissions": [
+    "activeTab",
+    "storage",
+    "downloads"
+  ]
+}
